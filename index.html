@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet"> 
+</head>
+<body>
+       <div class="weworshipsoham"></div> <a href="madebysoham.html">Summary</a>
+</div>
+<div class="container">
+        <img src="images/GrabBreaksLogo.svg" alt="GrabApp logo" class="logo" />
+
+        <section>
+        <img src="images/car.svg" alt="grab transport illustration" class="car"/>
+        <h1>Your driving analytics. Tracked.</h1>
+        <p class="subheading">Improve your productivity with activity tracking and break suggestions.</p>
+        </section>
+
+</div>
+
+
+<div class="green-container">
+<div class="container">
+   
+    <div class="container">
+        <h2>Click here to get started.</h2>
+        <h3>Are you currently driving or resting?</h3>
+        <div class="buttons">
+        <input type="button" class="cta" value="Driving" id="DriveButton" onclick="GetTimeDrive()" onclick="DriveCounter++">
+        <input type="button" class="cta" value="Resting" id="RestButton" onclick="GetTimeRest()" onclick="RestCounter++">
+        <input type="button" class="end" value="End the day" id="EndDayButton">
+    </div>
+    </div>
+
+</div>
+</div>
+
+<footer>
+<div class="footer-container">
+    <div class="container">
+        <a href="#">
+           <img src="images/grab-logo-black-and-white.png" alt="logo" class="logo" width="70%" height="70%">
+        </a>
+        <p class="copyright">©Grab. All Rights Reserved.</p>
+    </div>
+</div>
+</footer>
+
+<script>
+
+var DriveCounter = 0;
+var RestCounter = 0;
+var endHour = [22, 23, 22, 22, 24]
+
+var average = (endHour[DriveCounter] + endHour[DriveCounter + 1] + endHour[DriveCounter + 2] + endHour[DriveCounter + 3]) / 4;
+
+
+var DriveCounter = 4;
+
+    var sessionIDDrive = new Array(1000);
+            for (x = 1; x < 1000; x++)
+                {
+                    sessionIDDrive[x] = x;
+                }
+
+var sessionIDRest = new Array(1000);
+            for (x = 1; x < 1000; x++)
+                {
+                    sessionIDRest[x] = x;
+                }
+
+var timeDiffDrive = new Array(1000)
+            for (x = 1; x < 1000; x++)
+                {
+                    timeDiffDrive[x] = x;
+                }
+
+var timeDiffRest = new Array(1000)
+            for (x = 1; x < 1000; x++)
+                {
+                    timeDiffRest[x] = x;
+                }
+
+
+
+     function GetTimeDrive() 
+        { 
+        Dtime = new Date();
+        var timestampDrive = Dtime.getHours() + ":" + Dtime.getMinutes() + ":" + Dtime.getSeconds();
+        sessionIDDrive[DriveCounter] = timestampDrive;
+        alert(sessionIDDrive[DriveCounter]);
+        timeDiffDrive[DriveCounter] = sessionIDDrive[DriveCounter + 1] - sessionIDDrive[DriveCounter] 
+        DriveCounter++;
+        }
+
+
+
+        function GetTimeRest() 
+        {
+        Rtime = new Date();
+        var timestampRest = Rtime.getHours() + ":" + Rtime.getMinutes() + ":" + Rtime.getSeconds();
+        sessionIDRest[RestCounter] = timestampRest;
+        alert(sessionIDRest[RestCounter]);
+        RestCounter++;
+
+        }
+
+
+
+    
+while(average > endHour[DriveCounter]){
+
+    alert("You have exceeded your regular end day time! Pleas consider going off-duty.")
+
+}
+
+
+
+</script>
+
+
+</body>
+</html>

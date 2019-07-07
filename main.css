@@ -1,0 +1,168 @@
+body
+{
+    margin: 0;
+    font-family: 'Poppins', sans-serif
+}
+
+html
+{
+    background: #e2e2e2
+}
+
+p, blockquote
+{
+font-size: .9em;
+line-height: 1.6em;
+}
+
+.container
+{
+  text-align: center;
+  padding: .8em 1.2em ;
+}
+
+
+.buttons
+{
+    font-family: 'Poppins',sans-serif;
+}
+
+.weworshipsoham {
+    border: none;
+    background-color: inherit;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+    color: green;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    color: #4CAF50;
+}
+
+.weworshipsoham:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.logo
+{
+    width: 300px;
+}
+
+.hide-mobile
+{
+    display: none;
+}
+
+.car
+{
+    width:60%;
+    text-align: center;
+}
+
+h1, .subheading
+{
+    position: relative;
+}
+
+.subheading
+{
+    font-size: 1.1em;
+}
+
+.green-container
+{
+    width: 100%;
+    background: #00FFB0;
+    color: #fff;
+    margin-top: 15%;
+    padding: 4em 0 2em;
+    border-radius: 40px;
+}
+
+.green-container::before
+{
+    content: "";
+    width: 40px;
+    height: 40px;
+    background-color: #00FFB0;
+    position: absolute;
+    top: -5px;
+    right: 0;
+    z-index: -2;
+    margin-bottom: 20px;
+}
+
+.green-container::after
+{
+    content: "";
+    width: 80px;
+    height: 40px;
+    background-color: #fff;
+    position: absolute;
+    right: 0;
+    border-radius: 50%;
+    z-index: -1;
+    margin-bottom: 20px;
+}
+
+h2
+{
+    margin-top: 4%;
+    font-size: 2.5em;
+}
+
+h3
+{
+    margin-bottom: 4%;
+    font-size: 1.2em;
+}
+
+.cta 
+{
+    background: #383030;
+    width: calc(100% - 1em);
+    display: block;
+    color: #fff;
+    border-radius: 20px;
+    padding: .5em;
+    text-decoration: none;
+    font-size: 1.5em;
+    margin: 3% auto 7%;
+}
+
+.end
+{
+    background: #ff4500;
+    width: calc(100% - 1em);
+    display: block;
+    color: #fff;
+    border-radius: 20px;
+    padding: .5em;
+    text-decoration: none;
+    font-size: 1.5em;
+    margin: 3% auto 7%;
+}
+
+.footer-container
+{
+    width: 100%;
+    background-color: #3D444A;
+    color: #fff;
+    padding: 3em 0;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+}
+
+.footer-container::before
+{
+    content: "";
+    width: 40px;
+    height: 40px;
+    background-color: #3D444A;
+    position: absolute;
+}

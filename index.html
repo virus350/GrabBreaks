@@ -9,10 +9,12 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet"> 
 </head>
 <body>
-       <div class="weworshipsoham"></div> <a href="madebysoham.html">Summary</a>
+       <div class="weworshipsoham"></div> <a href="madebysoham.html" id="next-pagelink">Summary</a>
 </div>
-<div class="container">
+<div class="header-container">
+
         <img src="images/GrabBreaksLogo.svg" alt="GrabApp logo" class="logo" />
+
 
         <section>
         <img src="images/car.svg" alt="grab transport illustration" class="car"/>
@@ -23,20 +25,59 @@
 </div>
 
 
-<div class="green-container">
-<div class="container">
-   
-    <div class="container">
-        <h2>Click here to get started.</h2>
-        <h3>Are you currently driving or resting?</h3>
-        <div class="buttons">
-        <input type="button" class="cta" value="Driving" id="DriveButton" onclick="GetTimeDrive()" onclick="DriveCounter++">
-        <input type="button" class="cta" value="Resting" id="RestButton" onclick="GetTimeRest()" onclick="RestCounter++">
-        <input type="button" class="end" value="End the day" id="EndDayButton">
-    </div>
-    </div>
 
-</div>
+<div class="green-container">
+
+        <div class="container">
+                <!-- time to add the controls -->
+                <input id="start" name="controls" type="radio" />
+                <input id="stop" name="controls" type="radio" />
+                <input id="reset" name="controls" type="radio" />
+                <div class="timer">
+                    <div class="cell">
+                        <div class="numbers tenhour moveten">0 1 2 3 4 5 6 7 8 9</div>
+                    </div>
+                    <div class="cell">
+                        <div class="numbers hour moveten">0 1 2 3 4 5 6 7 8 9</div>
+                    </div>
+                    <div class="cell divider"><div class="numbers">:</div></div>
+                    <div class="cell">
+                        <div class="numbers tenminute movesix">0 1 2 3 4 5 6</div>
+                    </div>
+                    <div class="cell">
+                        <div class="numbers minute moveten">0 1 2 3 4 5 6 7 8 9</div>
+                    </div>
+                    <div class="cell divider"><div class="numbers">:</div></div>
+                    <div class="cell">
+                        <div class="numbers tensecond movesix">0 1 2 3 4 5 6</div>
+                    </div>
+                    <div class="cell">
+                        <div class="numbers second moveten">0 1 2 3 4 5 6 7 8 9</div>
+                    </div>
+                    <div class="cell divider"><div class="numbers">:</div></div>
+                    <div class="cell">
+                        <div class="numbers milisecond moveten">0 1 2 3 4 5 6 7 8 9</div>
+                    </div>
+                    <div class="cell">
+                        <div class="numbers tenmilisecond moveten">0 1 2 3 4 5 6 7 8 9</div>
+                    </div>
+                    <div class="cell">
+                        <div class="numbers hundredmilisecond moveten">0 1 2 3 4 5 6 7 8 9</div>
+                    </div>
+                </div>
+
+                <div class="container">
+                        <h2>Click here to get started.</h2>
+                        <h3>Are you currently driving or resting?</h3>
+                    </div>
+
+                <!-- Lables for the controls -->
+                <div id="timer_controls">
+                    <label for="start" id="DriveButton" onclick="GetTimeDrive()" onclick="DriveCounter++">Driving</label>
+                    <label for="stop" id="RestButton" onclick="GetTimeRest()" onclick="RestCounter++">Resting</label>
+                    <label for="reset">End the day</label>
+                </div>
+            </div>
 </div>
 
 <footer>
@@ -92,7 +133,7 @@ var timeDiffRest = new Array(1000)
         Dtime = new Date();
         var timestampDrive = Dtime.getHours() + ":" + Dtime.getMinutes() + ":" + Dtime.getSeconds();
         sessionIDDrive[DriveCounter] = timestampDrive;
-        alert(sessionIDDrive[DriveCounter]);
+        alert("Timestamp for new driver session saved at " + sessionIDDrive[DriveCounter]);
         timeDiffDrive[DriveCounter] = sessionIDDrive[DriveCounter + 1] - sessionIDDrive[DriveCounter] 
         DriveCounter++;
         }
@@ -104,7 +145,7 @@ var timeDiffRest = new Array(1000)
         Rtime = new Date();
         var timestampRest = Rtime.getHours() + ":" + Rtime.getMinutes() + ":" + Rtime.getSeconds();
         sessionIDRest[RestCounter] = timestampRest;
-        alert(sessionIDRest[RestCounter]);
+        alert("Timestamp for new rest session saved at " + sessionIDRest[RestCounter]);
         RestCounter++;
 
         }
